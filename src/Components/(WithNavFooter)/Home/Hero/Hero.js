@@ -1,24 +1,22 @@
+import { AllImages } from "@/assets/AllImages";
+import Image from "next/image";
+
 const Hero = () => {
   return (
-    <div className="relative h-screen w-full">
-      {/* Background video */}
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        {/* Use a direct video link here */}
-        <source
-          src="https://cdn.videvo.net/videvo_files/video/free/2018-10/large_watermarked/181003_07_London_4k_031_preview.mp4"
-          type="video/mp4"
+    <div className="relative h-screen w-full mb-10">
+      {/* Background image */}
+      <div className="absolute top-0 left-0 w-full h-full">
+        <Image
+          src={AllImages.hero}
+          height={0}
+          width={0}
+          alt="Hero Image"
+          className="h-full w-full object-cover z-0"
         />
-        Your browser does not support the video tag.
-      </video>
+      </div>
 
       {/* Overlay content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full bg-black bg-opacity-50 text-center px-4">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full  text-center px-4">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">
           Explore the Latest Tech Gadgets
         </h1>
@@ -34,7 +32,7 @@ const Hero = () => {
       </div>
 
       {/* Dark gradient overlay (optional for better text contrast) */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black to-transparent opacity-50"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black to-transparent opacity-150"></div>
     </div>
   );
 };
