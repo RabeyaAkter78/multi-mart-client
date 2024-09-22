@@ -1,3 +1,11 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off" // Disable the rule that requires React in scope
+  }
 }
