@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Footer from "@/Components/Shared/Footer/Footer";
 import NavBar from "@/Components/Shared/NavBar/NavBar";
 import React from "react";
@@ -7,7 +8,7 @@ const MainLayout = ({ children }) => {
     <div className="">
       <NavBar />
       <div>{children}</div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -71,7 +71,7 @@ const LowerNavBar = () => {
         },
       }}
     >
-      <div className="w-full bg-neutral-900 my-2">
+      <div className="w-full bg-neutral-900 pt-2">
         <div className="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
           {/* Logo on the left */}
           <div className="flex-shrink-0">

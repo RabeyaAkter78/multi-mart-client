@@ -1,12 +1,14 @@
-import Footer from "@/Components/Shared/Footer/Footer";
-import NavBar from "@/Components/Shared/NavBar/NavBar";
-import { Button } from "antd";
+import Hero from "@/Components/(WithNavFooter)/Home/Hero/Hero";
+import Testimonials from "@/Components/(WithNavFooter)/Home/Testimonials/Testimonials";
+import TrendingProducts from "@/Components/(WithNavFooter)/Home/TrendingProducts/TrendingProducts";
+
 export default function Home() {
   return (
     <main className="bg-background-color text-white ">
-      <div className="container mx-auto py-10">
-        <NavBar />
-        <Footer />
+      <div className="px-2 container mx-auto py-10">
+        <Hero />
+        <TrendingProducts />
+        <Testimonials />
       </div>
     </main>
   );
