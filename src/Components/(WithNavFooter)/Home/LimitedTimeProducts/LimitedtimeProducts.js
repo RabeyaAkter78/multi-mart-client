@@ -105,7 +105,7 @@ const LimitedtimeProducts = () => {
           view all
         </button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 xl:grid-cols-6justify-center items-center md:w-[80%] ">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 xl:grid-cols-6 justify-center items-center md:w-[80%] ">
         {products.map((product) => {
           const timeLeft = useCountdown(product.dealEndTime);
 

@@ -2,10 +2,11 @@
 import React from "react";
 
 const SectionTitle = ({ heading }) => {
+  const data=[]
   return (
     <div
       data-aos="zoom-in"
-      className="flex justify-center items-center md:my-28"
+      className="flex justify-center items-center md:mt-28"
     >
       <h1 className="text-xl md:text-2xl lg:text-4xl font-bold text-card-color text-center   my-20 inline-block relative uppercase">
         {heading}
