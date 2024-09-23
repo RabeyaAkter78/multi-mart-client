@@ -31,16 +31,9 @@ const Hero = () => {
     { id: 1, name: "Headphones", icon: <TbHeadphones className="h-6 w-6" /> },
     { id: 2, name: "Laptops", icon: <TbDeviceLaptop className="h-6 w-6" /> },
     { id: 3, name: "Cameras", icon: <TbCamera className="h-6 w-6" /> },
-    { id: 4, name: "Smart Home", icon: <TbSmartHome className="h-6 w-6" /> },
     { id: 5, name: "Printers", icon: <TbPrinter className="h-6 w-6" /> },
     { id: 6, name: "Drones", icon: <TbDrone className="h-6 w-6" /> },
     { id: 7, name: "Microphones", icon: <TbMicrophone className="h-6 w-6" /> },
-    {
-      id: 8,
-      name: "Batteries",
-      icon: <TbBatteryCharging className="h-6 w-6" />,
-    },
-    { id: 9, name: "Accessories", icon: <TbGlobe className="h-6 w-6" /> },
     { id: 10, name: "Wallets", icon: <TbWallet className="h-6 w-6" /> },
     { id: 11, name: "Tools", icon: <TbTools className="h-6 w-6" /> },
     { id: 12, name: "Keyboards", icon: <TbKeyboard className="h-6 w-6" /> },
@@ -61,8 +54,8 @@ const Hero = () => {
   ];
 
   return (
-    <div className="relative h-screen">
-      <div className="flex flex-col md:flex-row w-full h-[90%] ">
+    <div className="h-auto md:h-screen">
+      <div className="flex flex-col md:flex-row w-full h-auto md:h-[90%] ">
         {/* Left sidebar */}
         <div className="bg-[#854d0e] md:w-[20%] order-3 md:order-1">
           <div className="mt-8 mb-16 flex justify-center gap-2">
@@ -83,7 +76,7 @@ const Hero = () => {
         </div>
 
         {/* Middle bar */}
-        <div className=" md:w-[60%] h-full order-1 md:order-2 mb-10 md:mb-0">
+        <div className=" md:w-[60%] h-auto md:h-full order-1 md:order-2 mb-10 md:mb-0">
           <div className="relative w-full md:h-[80%] mb-10 md:mb-0">
             {/* Background image */}
             <div className="absolute top-0 left-0 w-full h-full">
@@ -97,7 +90,7 @@ const Hero = () => {
             </div>
 
             {/* Overlay content */}
-            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+            <div className="relative z-10 flex flex-col items-center justify-center h-auto md:h-full text-center px-4 py-2">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">
                 Explore the Latest Tech Gadgets
               </h1>
@@ -114,11 +107,11 @@ const Hero = () => {
             </div>
 
             {/* Dark gradient overlay */}
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black to-transparent opacity-150"></div>
+            <div className="absolute top-0 left-0 w-full h-auto md:h-full bg-gradient-to-b from-black to-transparent opacity-150"></div>
           </div>
 
           {/* Brand logos */}
-          <div className="h-[20%] flex justify-between items-center gap-2 bg-neutral-500">
+          <div className="p-2 h-auto md:h-[20%] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-between items-center gap-2 bg-neutral-500 mb-10 md:mb-0">
             {brands.map((brand) => (
               <div
                 key={brand.id}
@@ -139,22 +132,17 @@ const Hero = () => {
 
         {/* Right sidebar */}
         <div className="bg-yellow-800 md:w-[20%] order-2 md:order-3 mb-10 md:mb-0">
-          <div className="flex flex-col items-center p-4">
-            <h3 className="text-white text-xl font-semibold">
+          <div className=" flex flex-col items-center pt-20 px-4 ">
+            <h3 className="text-white text-md font-semibold">
               Flash sale for you!
             </h3>
-            <h1 className="text-4xl text-white font-bold">
-              50% <span className="text-xl">off</span>
+            <h1 className="md:text-xl xl:text-4xl text-white font-bold">
+              50% <span className="text-sm">off</span>
             </h1>
             <CountdownCard />
-          </div>
-          <div className="text-center ">
-            <Link
-              href=""
-              className="inline-block bg-card-color text-black text-lg md:text-xl px-8 py-2 rounded-full shadow-lg mb-5"
-            >
-              Shop Now
-            </Link>
+            <button className="text-center inline-block bg-card-color text-black text-lg md:text-xl px-8 py-2 rounded-full shadow-lg mb-5">
+              <Link href="">Shop Now</Link>
+            </button>
           </div>
         </div>
       </div>

@@ -66,7 +66,7 @@ const TrendingProducts = () => {
   return (
     <div>
       <SectionTitle heading={"All Trending Product"} />{" "}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 text-black justify-center items-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 text-black justify-center items-center px-2">
         {data.map((product) => (
           <div
             key={product.id}

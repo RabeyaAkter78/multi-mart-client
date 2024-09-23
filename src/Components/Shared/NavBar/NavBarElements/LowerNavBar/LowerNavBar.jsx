@@ -36,7 +36,7 @@ const LowerNavBar = () => {
   const labels = [
     { name: "Home", link: "/" },
     { name: "Shop", link: "/shop" },
-    { name: "Catrgory", link: "/catrgory" },
+    { name: "Category", link: "/category" },
     { name: "Contact Us", link: "/contact-us" },
   ];
 
@@ -72,7 +72,7 @@ const LowerNavBar = () => {
       }}
     >
       <div className="w-full bg-neutral-900 pt-2">
-        <div className="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
+        <div className="container mx-auto flex items-center justify-between gap-5 py-4 px-4 lg:px-8">
           {/* Logo on the left */}
           <div className="flex-shrink-0">
             <Link href="/">
@@ -92,7 +92,7 @@ const LowerNavBar = () => {
               <Search
                 placeholder="Search Products"
                 onSearch={onSearch}
-                style={{ width: "70%" }}
+                className="w-full md:w-2/3 lg:w-3/5"
               />
             </Space>
           </div>
@@ -113,14 +113,14 @@ const LowerNavBar = () => {
               </Link>
             ))}
             <Link href="/auth/login">
-              <button className="bg-button-color  text-white px-10 py-2 rounded-md shadow-lg">
+              <button className="bg-button-color text-white px-10 py-2 rounded-md shadow-lg">
                 Log In
               </button>
             </Link>
           </div>
 
           {/* Hamburger menu for mobile */}
-          <div className="lg:hidden ml-auto">
+          <div className="lg:hidden">
             <Button
               icon={<RxHamburgerMenu />}
               onClick={handleMobileMenuClick}
@@ -135,15 +135,13 @@ const LowerNavBar = () => {
           onClose={() => setDrawerVisible(false)}
           open={drawerVisible}
         >
-          <div className="flex flex-col items-center space-y-4 ">
+          <div className="flex flex-col items-center space-y-4">
             <div className="flex flex-col items-center space-y-2 w-full">
               {labels.map((item, index) => (
                 <Link href={item.link} key={index}>
                   <button
                     className={`w-56 px-4 py-2 font-medium text-lg text-white bg-neutral-800 rounded-md ${
-                      router.pathname === item.link
-                        ? "bg-button-color w-56"
-                        : ""
+                      router.pathname === item.link ? "bg-button-color" : ""
                     }`}
                     onClick={() => select(index)}
                   >
@@ -152,7 +150,7 @@ const LowerNavBar = () => {
                 </Link>
               ))}
               <Link href="/auth/login">
-                <button className=" bg-button-color w-56 px-10 py-2 rounded-md shadow-lg text-white">
+                <button className="bg-button-color w-56 px-10 py-2 rounded-md shadow-lg text-white">
                   Log In
                 </button>
               </Link>

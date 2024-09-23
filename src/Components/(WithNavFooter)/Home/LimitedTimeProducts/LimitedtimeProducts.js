@@ -32,30 +32,30 @@ const LimitedtimeProducts = () => {
       dealEndTime: "2024-09-30T23:59:59",
       link: "/products/wireless-headphones",
     },
-    // {
-    //   Id: "4",
-    //   name: "Smartwatch",
-    //   price: "$149.99",
-    //   image: AllImages.product4,
-    //   dealEndTime: "2024-09-25T23:59:59",
-    //   link: "/products/smartwatch",
-    // },
-    // {
-    //   Id: "5",
-    //   name: "Smartwatch",
-    //   price: "$149.99",
-    //   image: AllImages.product5,
-    //   dealEndTime: "2024-09-25T23:59:59",
-    //   link: "/products/smartwatch",
-    // },
-    // {
-    //   Id: "6",
-    //   name: "Smartwatch",
-    //   price: "$149.99",
-    //   image: AllImages.product6,
-    //   dealEndTime: "2024-09-25T23:59:59",
-    //   link: "/products/smartwatch",
-    // },
+    {
+      Id: "4",
+      name: "Smartwatch",
+      price: "$149.99",
+      image: AllImages.product4,
+      dealEndTime: "2024-09-25T23:59:59",
+      link: "/products/smartwatch",
+    },
+    {
+      Id: "5",
+      name: "Smartwatch",
+      price: "$149.99",
+      image: AllImages.product5,
+      dealEndTime: "2024-09-25T23:59:59",
+      link: "/products/smartwatch",
+    },
+    {
+      Id: "6",
+      name: "Smartwatch",
+      price: "$149.99",
+      image: AllImages.product6,
+      dealEndTime: "2024-09-25T23:59:59",
+      link: "/products/smartwatch",
+    },
   ];
 
   // Countdown Timer Hook
@@ -105,7 +105,7 @@ const LimitedtimeProducts = () => {
           view all
         </button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 justify-center items-center md:w-[80%] ">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 xl:grid-cols-6justify-center items-center md:w-[80%] ">
         {products.map((product) => {
           const timeLeft = useCountdown(product.dealEndTime);
 

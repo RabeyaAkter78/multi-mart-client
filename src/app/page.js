@@ -7,11 +7,11 @@ import TrendingProducts from "@/Components/(WithNavFooter)/Home/TrendingProducts
 export default function Home() {
   return (
     <main className="bg-background-color text-white ">
-      <div className="px-2 container mx-auto ">
+      <div className=" container mx-auto ">
         <Hero />
-        {/* <LimitedtimeProducts /> */}
-        {/* <TrendingProducts /> */}
-        {/* <Testimonials /> */}
+        <LimitedtimeProducts />
+        <TrendingProducts />
+        <Testimonials />
       </div>
     </main>
   );
