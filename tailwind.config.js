@@ -9,7 +9,8 @@ module.exports = {
     extend: {
       colors: {
         "background-color": "#040007",
-        "button-color": "#f45525",
+        "primary-color": "",
+        "button-color": "#854d0e",
         "card-color": "#ede5dc",
         "icons-color": "#39ff14",
       },
@@ -19,9 +20,6 @@ module.exports = {
 };
 
 // button: bg
-
-
-
 
 /* icons,Buttons- Neon Green (#39ff14) */
 /* Background Color: Black (#040007 */

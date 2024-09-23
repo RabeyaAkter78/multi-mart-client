@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import NavBar from "@/Components/Shared/NavBar/NavBar";
+import Footer from "@/Components/Shared/Footer/Footer";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
       >
         <NavBar />
         <AntdRegistry>{children}</AntdRegistry>
+        <Footer />
       </body>
     </html>
   );

@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link"; // Use for "Shop Now" button linking
+import Link from "next/link";
 import { AllImages } from "@/assets/AllImages";
 
 const LimitedtimeProducts = () => {
@@ -11,15 +12,15 @@ const LimitedtimeProducts = () => {
       Id: "1",
       name: "Wireless Headphones",
       price: "$99.99",
-      image: AllImages.product1, // Corrected image reference
+      image: AllImages.product1,
       dealEndTime: "2024-09-30T23:59:59", // ISO format for countdown timer
-      link: "/products/wireless-headphones", // Link to product page
+      link: "/products/wireless-headphones",
     },
     {
       Id: "2",
       name: "Smartwatch",
       price: "$149.99",
-      image: AllImages.product2, // Corrected image reference
+      image: AllImages.product2,
       dealEndTime: "2024-09-25T23:59:59",
       link: "/products/smartwatch",
     },
@@ -27,35 +28,34 @@ const LimitedtimeProducts = () => {
       Id: "3",
       name: "Wireless Headphones",
       price: "$99.99",
-      image: AllImages.product3, // Corrected image reference
+      image: AllImages.product3,
       dealEndTime: "2024-09-30T23:59:59",
       link: "/products/wireless-headphones",
     },
-    {
-      Id: "4",
-      name: "Smartwatch",
-      price: "$149.99",
-      image: AllImages.product4, // Corrected image reference
-      dealEndTime: "2024-09-25T23:59:59",
-      link: "/products/smartwatch",
-    },
-    {
-      Id: "5",
-      name: "Smartwatch",
-      price: "$149.99",
-      image: AllImages.product5, // Corrected image reference
-      dealEndTime: "2024-09-25T23:59:59",
-      link: "/products/smartwatch",
-    },
-    {
-      Id: "6",
-      name: "Smartwatch",
-      price: "$149.99",
-      image: AllImages.product6, // Corrected image reference
-      dealEndTime: "2024-09-25T23:59:59",
-      link: "/products/smartwatch",
-    },
-    // Add more products here
+    // {
+    //   Id: "4",
+    //   name: "Smartwatch",
+    //   price: "$149.99",
+    //   image: AllImages.product4,
+    //   dealEndTime: "2024-09-25T23:59:59",
+    //   link: "/products/smartwatch",
+    // },
+    // {
+    //   Id: "5",
+    //   name: "Smartwatch",
+    //   price: "$149.99",
+    //   image: AllImages.product5,
+    //   dealEndTime: "2024-09-25T23:59:59",
+    //   link: "/products/smartwatch",
+    // },
+    // {
+    //   Id: "6",
+    //   name: "Smartwatch",
+    //   price: "$149.99",
+    //   image: AllImages.product6,
+    //   dealEndTime: "2024-09-25T23:59:59",
+    //   link: "/products/smartwatch",
+    // },
   ];
 
   // Countdown Timer Hook
@@ -91,7 +91,7 @@ const LimitedtimeProducts = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-2 w-full">
+    <div className="flex flex-col lg:flex-row gap-5 w-full bg-slate-900 p-2">
       <div className="lg:w-[20%] bg-card-color text-white flex flex-col justify-center items-center">
         <Image
           src={AllImages.limitedOffer}
@@ -105,14 +105,14 @@ const LimitedtimeProducts = () => {
           view all
         </button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 justify-center items-center md:w-[80%] ">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 justify-center items-center md:w-[80%] ">
         {products.map((product) => {
           const timeLeft = useCountdown(product.dealEndTime);
 
           return (
             <div
               key={product.Id}
-              className="bg-card-color text-black text-center w-44"
+              className="bg-card-color text-black text-center md:w-44 mb-5 md:mb-0"
             >
               <Image
                 src={product.image}
