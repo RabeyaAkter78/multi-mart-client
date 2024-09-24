@@ -1,4 +1,5 @@
 "use client";
+import Faq from "@/Components/(WithNavFooter)/Home/Faq/Faq";
 import Hero from "@/Components/(WithNavFooter)/Home/Hero/Hero";
 import LimitedtimeProducts from "@/Components/(WithNavFooter)/Home/LimitedTimeProducts/LimitedtimeProducts";
 import ProductAdds from "@/Components/(WithNavFooter)/Home/ProductAdds/ProductAdds";
@@ -14,6 +15,7 @@ export default function Home() {
         <LimitedtimeProducts />
         <TrendingProducts />
         <WhyChoseUs />
+        <Faq />
         {/* <ProductAdds /> */}
         <Testimonials />
       </div>

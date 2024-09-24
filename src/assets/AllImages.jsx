@@ -8,6 +8,7 @@ import product4 from "../assets/images/product4.jpg";
 import product5 from "../assets/images/product5.jpg";
 import product6 from "../assets/images/product6.jpg";
 import user from "../assets/images/user.jpg";
+import arrow from "../assets/images/arrow.png";
 import limitedOffer from "../assets/images/limitedOffer.jpg";
 
 export const AllImages = {
@@ -21,5 +22,6 @@ export const AllImages = {
   product5,
   product6,
   user,
+  arrow,
   limitedOffer,
 };

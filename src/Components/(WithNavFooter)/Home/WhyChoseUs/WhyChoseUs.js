@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import SectionTitle from "@/Components/Shared/SectionTitle/SectionTitle";
 import Link from "next/link";
 import React from "react";

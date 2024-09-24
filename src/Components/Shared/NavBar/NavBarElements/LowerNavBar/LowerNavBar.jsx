@@ -35,7 +35,7 @@ const LowerNavBar = () => {
 
   const labels = [
     { name: "Home", link: "/" },
-    { name: "Shop", link: "/shop" },
+    { name: "Products", link: "/products" },
     { name: "Category", link: "/category" },
     { name: "Contact Us", link: "/contact-us" },
   ];
