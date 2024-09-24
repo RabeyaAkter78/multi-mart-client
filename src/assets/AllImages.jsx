@@ -33,9 +33,21 @@ import drone4 from "../assets/images/drone4.jpg";
 import mcp1 from "../assets/images/mcp1.jpg";
 import mcp2 from "../assets/images/mcp2.jpg";
 import mcp3 from "../assets/images/mcp3.jpg";
+import wallet1 from "../assets/images/wallet1.jpg";
+import wallet2 from "../assets/images/wallet2.jpg";
+import wallet3 from "../assets/images/wallet3.jpg";
+import keyboard1 from "../assets/images/keyboard1.jpg";
+import keyboard2 from "../assets/images/keyboard2.jpg";
+import keyboard3 from "../assets/images/keyboard3.jpg";
 
 export const AllImages = {
   logo,
+  keyboard1,
+  keyboard2,
+  keyboard3,
+  wallet1,
+  wallet2,
+  wallet3,
   mcp1,
   mcp2,
   mcp3,

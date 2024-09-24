@@ -11,7 +11,8 @@ const TrendingProducts = () => {
       name: "Wireless Bluetooth",
       price: "100",
       description: "Good product",
-      rating: 4.5, // New attribute for product rating
+      rating: 4.5,
+      image: AllImages.headphone1,
     },
     {
       id: 2,
@@ -19,6 +20,7 @@ const TrendingProducts = () => {
       price: "150",
       description: "Stylish and functional",
       rating: 4.7,
+      image: AllImages.headphone2,
     },
     {
       id: 3,
@@ -26,6 +28,7 @@ const TrendingProducts = () => {
       price: "200",
       description: "Clear sound",
       rating: 4.8,
+      image: AllImages.camera1,
     },
     {
       id: 4,
@@ -33,6 +36,7 @@ const TrendingProducts = () => {
       price: "80",
       description: "Compact and powerful",
       rating: 4.2,
+      image: AllImages.camera2,
     },
     {
       id: 5,
@@ -40,6 +44,7 @@ const TrendingProducts = () => {
       price: "50",
       description: "Track your fitness",
       rating: 4.3,
+      image: AllImages.keyboard1,
     },
     {
       id: 6,
@@ -47,6 +52,7 @@ const TrendingProducts = () => {
       price: "30",
       description: "Fast charging",
       rating: 4.1,
+      image: AllImages.drone3,
     },
     {
       id: 7,
@@ -54,6 +60,7 @@ const TrendingProducts = () => {
       price: "30",
       description: "Fast charging",
       rating: 4.1,
+      image: AllImages.mcp2,
     },
     {
       id: 8,
@@ -61,6 +68,7 @@ const TrendingProducts = () => {
       price: "30",
       description: "Fast charging",
       rating: 4.1,
+      image: AllImages.laptop1,
     },
   ];
 
@@ -74,11 +82,11 @@ const TrendingProducts = () => {
             className="bg-[#ede5dc] p-5 rounded-md flex flex-col justify-center items-center"
           >
             <Image
-              src={AllImages.airpods}
+              src={product.image}
               width={0}
               height={0}
               alt="card image"
-              className="h-44 w-full"
+              className="h-44 w-full object-cover"
             ></Image>
             <h2 className="font-semibold pt-4">{product.name}</h2>
             <p className="text-neutral-500">Price: ${product.price}</p>
