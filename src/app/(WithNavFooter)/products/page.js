@@ -1,7 +1,10 @@
+"use client";
 import { AllImages } from "@/assets/AllImages";
+import { ConfigProvider, Pagination, Space } from "antd";
+import Search from "antd/es/transfer/search";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useState } from "react";
 
 const ProductsPage = () => {
   const data = [
@@ -70,8 +73,28 @@ const ProductsPage = () => {
       image: AllImages.product8,
     },
   ];
+  // Search handler
+  const onSearch = (value) => {
+    console.log("Search query: ", value);
+  };
+  const [currentPage, setCurrentPage] = useState(1);
+  console.log(currentPage);
+  const pageSize = 10;
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
   return (
     <div className="container mx-auto">
+      {/* Search bar in the center */}
+      <div className="flex-grow flex justify-end">
+        <Space direction="vertical" className="my-5">
+          <Search
+            placeholder="Search Products"
+            onSearch={onSearch()}
+            className="w-full md:w-2/3 lg:w-3/5"
+          />
+        </Space>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 text-black justify-center items-center px-2">
         {data.map((product) => (
           <div
@@ -94,6 +117,25 @@ const ProductsPage = () => {
             </Link>
           </div>
         ))}
+      </div>
+      <div className=" my-8 ml-4">
+        <ConfigProvider
+          theme={{
+            components: {
+              // Pagination: {
+              //   colorPrimary: "rgb(0,0,0)",
+              //   colorPrimaryHover: "rgb(0,0,0)",
+              // },
+            },
+          }}
+        >
+          <Pagination
+            current={currentPage}
+            pageSize={pageSize}
+            total={50}
+            onChange={handlePageChange}
+          />
+        </ConfigProvider>
       </div>
     </div>
   );

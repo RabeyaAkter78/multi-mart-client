@@ -1,8 +1,12 @@
+"use client";
+
 /* eslint-disable react/prop-types */
 import { AllImages } from "@/assets/AllImages";
 import Footer from "@/Components/Shared/Footer/Footer";
 import NavBar from "@/Components/Shared/NavBar/NavBar";
-import React from "react";
+import { ConfigProvider, Slider, Space } from "antd";
+import Search from "antd/es/transfer/search";
+import React, { useState } from "react";
 import {
   TbHeadphones,
   TbDeviceLaptop,
@@ -27,6 +31,7 @@ import {
   TbCategoryPlus,
 } from "react-icons/tb";
 const MainLayout = ({ children }) => {
+  const [priceRange, setPriceRange] = useState([0, 1000]); // Initial price range
   const categories = [
     {
       id: 1,
@@ -89,29 +94,66 @@ const MainLayout = ({ children }) => {
       image: AllImages.product10, // Optional, if you have an image for Music Devices
     },
   ];
+
+  const onPriceChange = (value) => {
+    setPriceRange(value);
+  };
   return (
     <div className="container mx-auto ">
-      <div className="w-full flex flex-col md:flex-row ">
-        {/* Left sidebar */}
-        <div className="bg-[#854d0e] w-[15%] text-white pb-5 h-auto ">
-          <div className="flex justify-center gap-2 pt-10 pb-5">
-            <TbCategoryPlus className="h-8 w-8" />
-            <h1 className="text-xl font-bold text-center"> All Categories</h1>
-          </div>
-          <div className="flex flex-col justify-start items-start px-5 gap-5">
-            {categories.map((category) => (
-              <div
-                key={category.id}
-                className="flex gap-2 justify-center items-center cursor-pointer"
-              >
-                {category.icon}
-                <h1>{category.name}</h1>
+      <ConfigProvider
+        theme={{
+          components: {
+            Slider: {
+              dotActiveBorderColor: "rgb(133,77,14)",
+              dotBorderColor: "rgb(133,77,14)",
+              handleColor: "rgb(133,77,14)",
+              handleActiveOutlineColor: "rgb(133,77,14)",
+              handleActiveColor: "rgb(133,77,14)",
+              railBg: "rgb(133,77,14)",
+            },
+          },
+        }}
+      >
+        <div className="w-full flex flex-col md:flex-row ">
+          {/* Left sidebar */}
+          <div className="bg-card-color w-[15%] h-auto ">
+            <div>
+              <p className="text-xl font-bold ml-5 mt-10"> Price</p>
+              <div className="px-5">
+                {/* Display the selected price range */}
+                <p className="text-lg mb-2 text-gray-500">
+                  {`$${priceRange[0]} - $${priceRange[1]}`}
+                </p>
+                <Slider
+                  range
+                  min={0}
+                  max={1000}
+                  step={10}
+                  defaultValue={priceRange}
+                  onChange={onPriceChange}
+                  style={{ color: "#854d0e" }}
+                />
               </div>
-            ))}
+            </div>
+            <div className="flex ml-5 gap-2 pt-5 pb-2">
+              <h1 className="text-xl font-bold "> Categories</h1>
+            </div>
+
+            <div className="flex flex-col justify-start items-start px-5 gap-5">
+              {categories.map((category) => (
+                <div
+                  key={category.id}
+                  className="flex gap-2 justify-center items-center cursor-pointer"
+                >
+                  {category.icon}
+                  <h1>{category.name}</h1>
+                </div>
+              ))}
+            </div>
           </div>
+          <div className="bg-neutral-900 w-[85%]">{children}</div>
         </div>
-        <div className="bg-neutral-900 w-[85%]">{children}</div>
-      </div>
+      </ConfigProvider>
     </div>
   );
 };

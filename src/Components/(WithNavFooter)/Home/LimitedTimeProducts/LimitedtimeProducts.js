@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AllImages } from "@/assets/AllImages";
+import LeftTitle from "@/Components/Shared/SectionTitle/LeftTitle";
+import { FaArrowRight } from "react-icons/fa";
 
 const LimitedtimeProducts = () => {
   // Sample products data
@@ -91,47 +93,54 @@ const LimitedtimeProducts = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-5 w-full bg-slate-900 p-2">
-      <div className="lg:w-[20%] bg-card-color text-white flex flex-col justify-center items-center">
-        <Image
-          src={AllImages.limitedOffer}
-          width={0}
-          height={0}
-          alt="card image"
-          className="w-full mb-2"
-        ></Image>
+    <div>
+      <LeftTitle heading={"Limited Offer"} />
+      <div className="flex flex-col lg:flex-row gap-5 w-full bg-slate-900 p-10 rounded-xl">
+        <div className="lg:w-[20%] bg-card-color text-white flex flex-col justify-center items-center">
+          <Image
+            src={AllImages.limitedOffer}
+            width={0}
+            height={0}
+            alt="card image"
+            className="w-full mb-2"
+          ></Image>
+          <Link href="">
+            <button className="bg-button-color px-4 py-2 mb-2 rounded-md">
+              view all
+            </button>
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 xl:grid-cols-6 justify-center items-center md:w-[80%] ">
+          {products.map((product) => {
+            const timeLeft = useCountdown(product.dealEndTime);
 
-        <button className="bg-button-color px-4 pt-2 mb-2 rounded-md">
-          view all
+            return (
+              <div
+                key={product.Id}
+                className="bg-card-color text-black text-center md:w-44 mb-5 md:mb-0"
+              >
+                <Image
+                  src={product.image}
+                  width={0}
+                  height={0}
+                  alt="card image"
+                  className="h-24 w-full object-cover"
+                />
+
+                {/* Display Countdown */}
+                <p className="text-lg font-bold text-red-500">{timeLeft}</p>
+
+                <p className="font-semibold">{product.name}</p>
+                <button className="bg-button-color px-4 py-2 rounded-md text-white mb-2">
+                  shop now
+                </button>
+              </div>
+            );
+          })}
+        </div>
+        <button>
+          <FaArrowRight className="h-10 w-10 text-card-color cursor-pointer" />
         </button>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 xl:grid-cols-6 justify-center items-center md:w-[80%] ">
-        {products.map((product) => {
-          const timeLeft = useCountdown(product.dealEndTime);
-
-          return (
-            <div
-              key={product.Id}
-              className="bg-card-color text-black text-center md:w-44 mb-5 md:mb-0"
-            >
-              <Image
-                src={product.image}
-                width={0}
-                height={0}
-                alt="card image"
-                className="h-24 w-full object-cover"
-              />
-
-              {/* Display Countdown */}
-              <p className="text-lg font-bold text-red-500">{timeLeft}</p>
-
-              <p className="font-semibold">{product.name}</p>
-              <button className="bg-button-color px-4 py-2 rounded-md text-white mb-2">
-                shop now
-              </button>
-            </div>
-          );
-        })}
       </div>
     </div>
   );

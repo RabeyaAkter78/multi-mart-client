@@ -66,7 +66,7 @@ const Hero = () => {
             {categories.map((category) => (
               <div
                 key={category.id}
-                className="flex gap-2 justify-center items-center"
+                className="flex gap-2 justify-center items-center cursor-pointer"
               >
                 {category.icon}
                 <h1>{category.name}</h1>

@@ -69,12 +69,12 @@ const Testimonials = () => {
   return (
     <div className="mt-32">
       <SectionTitle heading={"What Our Customers Say"} />
-      <div className="container mx-auto px-2">
+      <div className="container mx-auto  px-2">
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-6 mb-8 bg-card-color rounded-lg shadow-lg"
+              className="flex flex-col items-center text-center p-6 mb-8 bg-card-color rounded-lg shadow-lg "
               data-aos="fade-up"
             >
               <Image
@@ -82,14 +82,14 @@ const Testimonials = () => {
                 height={0}
                 src={AllImages.user} // Replace with actual image
                 alt={testimonial.name}
-                className="w-24 h-24 rounded-full border-4 border-primary mb-4 text-center mx-auto"
+                className="w-40 h-40 rounded-full border-4 border-primary mb-4 mt-10 text-center mx-auto"
               />
-              <div className="relative text-black">
+              <div className="relative text-black my-10">
                 <FaQuoteLeft className="absolute top-0 left-0 text-gray-400 text-3xl transform -translate-x-4 -translate-y-4" />
                 <p className="text-lg italic px-6">{testimonial.testimonial}</p>
                 <FaQuoteRight className="absolute bottom-0 right-0 text-gray-400 text-3xl transform translate-x-4 translate-y-4" />
               </div>
-              <div className="mt-4">
+              <div className="mt-10 mb-10">
                 <h3 className="text-xl font-semibold text-neutral-500">
                   {testimonial.name}
                 </h3>

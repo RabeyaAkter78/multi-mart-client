@@ -87,7 +87,7 @@ const LowerNavBar = () => {
           </div>
 
           {/* Search bar in the center */}
-          <div className="flex-grow flex justify-center">
+          {/* <div className="flex-grow flex justify-center">
             <Space direction="vertical" className="w-full max-w-lg">
               <Search
                 placeholder="Search Products"
@@ -95,7 +95,7 @@ const LowerNavBar = () => {
                 className="w-full md:w-2/3 lg:w-3/5"
               />
             </Space>
-          </div>
+          </div> */}
 
           {/* Tabs/Links on the right */}
           <div className="hidden lg:flex items-center ml-auto space-x-4">

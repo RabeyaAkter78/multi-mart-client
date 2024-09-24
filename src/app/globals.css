@@ -2,4 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* / pagination / */
+button.ant-pagination-item-link svg {
+  color: white;
+  font-size: 32px;
+}
+.ant-pagination .ant-pagination-item-active {
+  font-weight: 600;
+  background-color: #666666;
+  border-color: #ffffff;
+}
+.ant-pagination .ant-pagination-item-active:hover {
+  font-weight: 600;
+  background-color: #666666;
+  border-color: #ffffff;
+}
+.ant-pagination .ant-pagination-item-active a {
+  color: #ffffff;
+}
+.ant-pagination .ant-pagination-item-active a:hover {
+  color: #ffffff;
+}
+.ant-pagination .ant-pagination-item:not(.ant-pagination-item-active) {
+  background-color: transparent;
+}
+.ant-pagination .ant-pagination-item:not(.ant-pagination-item-active) a {
+  color: #ffffff;
+}
+.ant-pagination .ant-pagination-item:not(.ant-pagination-item-active):hover {
+  transition: all 0.2s;
+  background-color: #666666;
+  border-color: #ffffff;
+}
+.ant-pagination .ant-pagination-item:not(.ant-pagination-item-active) a:hover {
+  transition: all 0.2s;
+  color: #ffffff;
+}

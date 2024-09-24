@@ -1,6 +1,7 @@
 import { AllImages } from "@/assets/AllImages";
 import SectionTitle from "@/Components/Shared/SectionTitle/SectionTitle";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const TrendingProducts = () => {
@@ -81,9 +82,11 @@ const TrendingProducts = () => {
             ></Image>
             <h2 className="font-semibold pt-4">{product.name}</h2>
             <p className="text-neutral-500">Price: ${product.price}</p>
-            <button className="bg-button-color px-4 py-2 rounded text-white">
-              view details
-            </button>
+            <Link href={`/products/${product.id}`}>
+              <button className="bg-button-color px-4 py-2 rounded text-white">
+                view details
+              </button>
+            </Link>
           </div>
         ))}
       </div>
