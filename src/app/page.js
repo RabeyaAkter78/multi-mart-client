@@ -6,6 +6,7 @@ import ProductAdds from "@/Components/(WithNavFooter)/Home/ProductAdds/ProductAd
 import Testimonials from "@/Components/(WithNavFooter)/Home/Testimonials/Testimonials";
 import TrendingProducts from "@/Components/(WithNavFooter)/Home/TrendingProducts/TrendingProducts";
 import WhyChoseUs from "@/Components/(WithNavFooter)/Home/WhyChoseUs/WhyChoseUs";
+import ContactUsPage from "./(WithNavFooter)/contact-us/contact-us";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Faq />
         {/* <ProductAdds /> */}
         <Testimonials />
+        <ContactUsPage/>
       </div>
     </main>
   );

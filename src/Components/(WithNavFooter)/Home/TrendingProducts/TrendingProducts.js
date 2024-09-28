@@ -1,8 +1,12 @@
+'use client'
 import { AllImages } from "@/assets/AllImages";
 import SectionTitle from "@/Components/Shared/SectionTitle/SectionTitle";
+import Aos from "aos";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const TrendingProducts = () => {
   const data = [
@@ -72,12 +76,21 @@ const TrendingProducts = () => {
     },
   ];
 
+  useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+        duration: 1000, // animation duration in milliseconds
+        easing: 'ease-in-out', // animation easing function
+        // once: true, // whether animation should happen only once
+    });
+}, []);
+
   return (
     <div>
       <SectionTitle heading={"All Trending Product"} />{" "}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 text-black justify-center items-center px-2">
+      <div  data-aos="fade-up" className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 text-black justify-center items-center px-2">
         {data.map((product) => (
-          <div
+          <div 
             key={product.id}
             className="bg-[#ede5dc] p-5 rounded-md flex flex-col justify-center items-center"
           >

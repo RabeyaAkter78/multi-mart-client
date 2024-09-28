@@ -6,6 +6,7 @@ import Link from "next/link";
 import { AllImages } from "@/assets/AllImages";
 import LeftTitle from "@/Components/Shared/SectionTitle/LeftTitle";
 import { FaArrowRight } from "react-icons/fa";
+import Aos from "aos";
 
 const LimitedtimeProducts = () => {
   // Sample products data
@@ -92,11 +93,12 @@ const LimitedtimeProducts = () => {
     return timeLeft;
   };
 
+
   return (
     <div>
       <LeftTitle heading={"Limited Offer"} />
       <div className="flex flex-col lg:flex-row gap-5 w-full bg-slate-900 p-10 rounded-xl">
-        <div className="lg:w-[20%] bg-card-color text-white flex flex-col justify-center items-center">
+        <div data-aos="fade-up"  className="lg:w-[20%] bg-card-color text-white flex flex-col justify-center items-center">
           <Image
             src={AllImages.limitedOffer}
             width={0}
