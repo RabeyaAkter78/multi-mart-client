@@ -4,6 +4,7 @@ import "./globals.css";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import NavBar from "@/Components/Shared/NavBar/NavBar";
 import Footer from "@/Components/Shared/Footer/Footer";
+import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,12 +25,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+  
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background-color`}
       >
+            <ErrorBoundary >
         <NavBar />
         <AntdRegistry>{children}</AntdRegistry>
         <Footer />
+        </ErrorBoundary>
       </body>
     </html>
   );
