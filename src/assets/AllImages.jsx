@@ -39,8 +39,10 @@ import wallet3 from "../assets/images/wallet3.jpg";
 import keyboard1 from "../assets/images/keyboard1.jpg";
 import keyboard2 from "../assets/images/keyboard2.jpg";
 import keyboard3 from "../assets/images/keyboard3.jpg";
+import error from "../assets/images/error.svg";
 
 export const AllImages = {
+  error,
   logo,
   keyboard1,
   keyboard2,
